@@ -20,6 +20,10 @@
             .mulish{
                 font-family: "Mulish", sans-serif;
             }
+            .gradient-background {
+                background: linear-gradient(to bottom, rgba(121, 125, 252, 1) 100%, rgba(121, 125, 252, 0) 0%);
+              }
+
         </style>
         <!-- Tailwind Script -->
         <script>
@@ -27,15 +31,141 @@
               theme: {
                 extend: {
                   colors: {
-                    clifford: '#da373d',
+                    primary: '#12132D',
+                    'secondary-color':'#F3F3F5',
+                    'third-white':'#12132D0D',
+                    'btn-color':'#797DFC',
                   }
                 }
               }
             }
         </script>
 </head>
-<body>
-    <h1 class="text-clifford">Hello World</h1>
+<body class="mullish">
+  <!-- Header Section Started -->
+    <header class="container mx-auto mt-5">
+      <!-- Navbar section Started  -->
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              </div>
+              <div tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 flex flex-col gap-2  rounded-box ">
+                <h1 class="border border-gray-600 p-2 rounded-3xl" title="Home"><a href="#"><i class="fa-solid fa-house text-slate-500"></i></a></h1>
+                <h1 class="border border-gray-600 p-2 rounded-3xl" title="Home"><a href="#"><i class="fa-solid fa-pen text-slate-500"></i></a></h1>
+                <h1 class="border border-gray-600 p-2 rounded-3xl" title="Home"><a href="#"><i class="fa-solid fa-user-plus text-slate-500"></i></a></h1>
+                <h1 class="border border-gray-600 p-2 rounded-3xl" title="Home"><a href="#"><i class="fa-solid fa-flag text-slate-500"></i></a></h1>
+              </div>
+            </div>
+            <a href="#" class="text-4xl font-extrabold">ReTro</a>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-center hidden lg:flex gap-10">
+              <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Home"><a href="#"><i class="fa-solid fa-house text-slate-500"></i></a></h1>
+              <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Tooltip" ><a href="#"><i class="fa-solid fa-pen text-slate-500"></i></a></h1>
+              <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Add User"><a href="#"><i class="fa-solid fa-user-plus text-slate-500"></i></a></h1>
+              <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Flag"><a href="#"><i class="fa-solid fa-flag text-slate-500"></i></a></h1>
+            </div>
+            <a class="btn rounded-3xl bg-btn-color ml-10 text-white">Sign In</a>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar section Ended  -->
+      <!-- Banner Section Started  -->
+     <div class="lg:px-0 px-2">
+      <div class="mt-5 bg-[url('images/bgbanner.png')] bg-cover bg-center bg-primary flex lg:flex-row flex-col justify-center items-center lg:py-40  lg:p-40  px-24">
+        <div class="py-5  p-0  flex-1">
+          <h1 class="text-center lg:text-left  text-4xl lg:text-6xl font-bold text-white ">Welcome to the <span class="text-gradient-background">ReTro</span> Forum</h1>
+          <h1 class="text-center lg:text-left  mt-8 text-xl text-white pr-0 lg:pr-40 ">Share your favorite opinion and win and wp forum coffee mug!</h1>
+          <div class="input input-bordered rounded-3xl flex items-center gap-2 mt-5  lg:max-w-96">
+            <input type="text" class="grow"  placeholder="Search"/>
+            <button class="btn text-white rounded-3xl bg-btn-color text-xl">Search</button>
+          </div>
+        </div>
+        <div class="flex-1 bg-white text-[#12132DCC] text-2xl p-12 rounded-2xl">
+              <div class="flex justify-between">
+                <h1>Registered User:</h1>
+                <h1>05</h1>
+              </div>
+              <div class="flex justify-between">
+                <h1>Forum:</h1>
+                <h1>05</h1>
+              </div>
+              <div class="flex justify-between">
+                <h1>Topics:</h1>
+                <h1>05</h1>
+              </div>
+              <div class="flex justify-between">
+                <h1>Replies:</h1>
+                <h1>05</h1>
+              </div>
+        </div>
+      </div>
+     </div>
+      <!-- Banner Section Ended  -->
+    </header>
+  <!-- Header Section Ended -->
+
+  <!-- Main Section Started -->
+    <main class="container mx-auto">
+      <!-- Discuss Section Started -->
+      <section class="mt-24">
+        <div class="my-6 flex flex-col items-center justify-center gap-6">
+            <h1 class="text-4xl font-extrabold">Let's Discuss</h1>
+            <h1>Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined </h1>
+        </div>
+
+        <div class="flex gap-10">
+          
+        <div class="flex-grow-0 flex flex-col">
+          <div class=" flex bg-[#797DFC1A] rounded-2xl border border-black p-10 gap-10">
+
+            <div class=" flex-grow-0 indicator">
+              <span class="indicator-item badge badge-primary"></span> 
+              <div class="grid w-24 h-24 bg-base-300 place-items-center"><img src="https://i.ibb.co/0QRxkd5/pexels-jan-kop-iva-3525908.jpg" alt=""></div>
+            </div>
+
+            <div class="flex-grow flex gap-6  flex-col"> 
+              <div class="flex gap-10 text-[#12132DCC] font-medium">
+                <h1> # Music </h1>
+                <h1>Author: Awlad Hossain</h1>
+              </div>
+              <div class="text-3xl font-bold">10 Kids Unaware of Their Halloween Costume</div>
+              <div>It's one thing to subject yourself to ha Halloween costume mishap because, hey that's your prerogative</div>
+              <div class="border border-dashed border-gray-500"   ></div>
+              <div>
+                <i class="fa-regular fa-message"></i>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+
+
+          <div class="flex-grow">
+              <h1>hello World</h1>
+          </div>
+
+
+        </div>
+        
+
+
+
+      </section>
+      <!-- Discuss Section Ended -->
+    </main>
+  <!-- Main Section Ended  -->
+
+  <!-- Footer Section Started -->
+    <footer>
+
+    </footer>
+  <!-- Footer Section Ended -->
+
 
     <script src="script.js"></script>
 </body>
