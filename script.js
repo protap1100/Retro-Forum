@@ -1,4 +1,17 @@
+// Loading spinner 
+const toggleLoadingSpinner = (loading) =>{
+    const loadingSpinner = document.getElementById("loading-spinner");
+    loadingSpinner.classList.remove('hidden');
+    if(loading){
+        loadingSpinner.classList.remove('hidden');
+    }else{
+        loadingSpinner.classList.add('hidden');
+    }
+}
+
+
 const getAllData = async (searchText) => {
+    toggleLoadingSpinner(true);
     const getData = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const post = await getData.json();
     const allPost = post;
@@ -24,7 +37,7 @@ function displayData(allPost){
                     </div>
                     <div class="flex-grow flex gap-6  flex-col"> 
                     <div class="flex gap-5 text-[#12132DCC] font-medium">
-                        <h1> # ${data.category} </h1>
+                        <h1>#${data.category} </h1>
                         <h1>Author:${data.author.name}</h1>
                     </div>
                     <div class="text-3xl font-bold">${data.title}</div>
@@ -33,12 +46,12 @@ function displayData(allPost){
 
                     <div class="flex justify-between items-center">
                         <div class="flex gap-5 text-[#12132D99] ">
-                        <h1><i class="fa-regular fa-message pr-3"></i> ${data.comment_count}</h1>
-                        <h1><i class="fa-regular fa-eye pr-3"></i> ${data.view_count}</h1>
-                        <h1><i class="fa-regular fa-clock pr-3"></i>  </h1>
+                        <h1><i class="fa-regular fa-message pr-2"></i> ${data.comment_count}</h1>
+                        <h1><i class="fa-regular fa-eye pr-2"></i> ${data.view_count}</h1>
+                        <h1><i class="fa-regular fa-clock pr-2"></i>  ${data.posted_time} </h1>
                         </div>
                         <div>
-                            <h1 class="text-2xl cursor-pointer" onclick="markAsRead('${data.title}', '${data.view_count}');"><i class="fa-regular fa-envelope bg-green-500"></i></h1>
+                            <h1 class="text-2xl cursor-pointer" onclick="markAsRead('${data.title.replace(/'/g,' ')}}', '${data.view_count}');"><i class="fa-regular fa-envelope bg-green-500"></i></h1>
                         </div>
                     </div>
                     </div>
@@ -78,6 +91,8 @@ function searchHandle(){
     toggleLoadingSpinner(true);
     const allPost = document.getElementById('all-post');
     allPost.textContent ='';
+    const markRead = document.getElementById('marking-read');
+    markRead.textContent='';
     const searchField = document.getElementById("search-field");
     const searchText2 = searchField.value;
     setTimeout(() => {
@@ -85,21 +100,6 @@ function searchHandle(){
     }, 2000);  
 
 }
-
-
-// Loading spinner 
-const toggleLoadingSpinner = (loading) =>{
-    const loadingSpinner = document.getElementById("loading-spinner");
-    loadingSpinner.classList.remove('hidden');
-    if(loading){
-        loadingSpinner.classList.remove('hidden');
-    }else{
-        loadingSpinner.classList.add('hidden');
-    }
-}
-
-
-
 
 
 
@@ -112,7 +112,7 @@ const latestData = async() =>{
 }
 
 function displayLatestData(allLatestData){
-        console.log(allLatestData);
+        // console.log(allLatestData);
 
         allLatestData.forEach(data => {
            const latestPost = document.getElementById('latest-post');
@@ -121,7 +121,7 @@ function displayLatestData(allLatestData){
                         <div class="card  border border-black">
                         <div class="p-4"><img class="rounded-xl" src="${data.cover_image}" alt="Shoes" /></div>
                         <div class="p-4 flex flex-col gap-5 ">
-                            <h2 class="#12132D99"><i class="fa-regular fa-calendar fa-fw mr-3"></i>${data.author.posted_date ? data.author.posted_date :'No Date Available' }</h2>
+                            <h2 class="#12132D99"><i class="fa-regular fa-calendar fa-fw mr-3"></i>${data.author.posted_date ? data.author.posted_date :'No Published Date' }</h2>
                             <p class="font-bold">${data.title}</p>
                             <p class="text-[#12132D99]">${data.description}</p>
                             <div class="flex gap-5 mt-5">
@@ -134,7 +134,7 @@ function displayLatestData(allLatestData){
                                 </div>
                                 <div>
                                 <h1 class="font-medium">${data.author.name}</h1>
-                                <h1 class="text-[#12132D99]">${data.author.designation ? data.author.designation : 'No Designation'}</h1>
+                                <h1 class="text-[#12132D99]">${data.author.designation ? data.author.designation : 'Unknown'}</h1>
                                 </div>
                             </div>
                         </div>
