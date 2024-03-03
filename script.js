@@ -1,5 +1,5 @@
-const  getAllData = async () =>{
-    const getData = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+const  getAllData = async (searchText) =>{
+    const getData = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const post = await getData.json();
     const allPost = post;
     displayData(allPost);
@@ -70,7 +70,23 @@ function markAsRead(title,view_count){
     counter.innerText = clickCount;
 }
 
-getAllData();
+getAllData('');
+
+
+function searchHandle(isShowAll){
+    const allPost = document.getElementById('all-post');
+    allPost.textContent ='';
+    const searchField = document.getElementById("search-field");
+    const searchText2 = searchField.value;
+    getAllData(searchText2, isShowAll);
+
+}
+
+
+
+
+
+
 
 
 // Latest Post 
