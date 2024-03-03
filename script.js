@@ -30,7 +30,7 @@ function displayData(allPost){
         const div = document.createElement('div');
         div.classList = "flex-grow-0 flex gap-10 flex-col";
         div.innerHTML= `
-                    <div class="flex  border border-[#181feb9b] bg-[#797DFC1A] flex-col lg:flex-row rounded-3xl p-10 gap-10">
+                    <div class="flex  border hover:border-[#181feb9b] hover:bg-[#797DFC1A] flex-col lg:flex-row rounded-3xl p-10 gap-10 ">
                     <div class="flex-grow-0 indicator">
                         ${data.isActive ? '<span class="indicator-item badge bg-[#10b981]"></span>' : '<span class="indicator-item badge bg-[#ff3434]"></span>'};
                         <div class="grid w-24 h-24 bg-base-300 place-items-center"><img src="${data.image}" alt=""></div>
@@ -51,7 +51,7 @@ function displayData(allPost){
                         <h1><i class="fa-regular fa-clock pr-2"></i>  ${data.posted_time} </h1>
                         </div>
                         <div>
-                            <h1 class="text-2xl cursor-pointer" onclick="markAsRead('${data.title.replace(/'/g,' ')}}', '${data.view_count}');"><i class="fa-regular fa-envelope bg-green-500"></i></h1>
+                            <h1 class="text-2xl cursor-pointer" onclick="markAsRead('${data.title.replace(/'/g,' ')}}', '${data.view_count}');"> <img src="images/Vector.png" alt=""></h1>
                         </div>
                     </div>
                     </div>
@@ -81,7 +81,7 @@ function markAsRead(title,view_count){
 
     clickCount++
     const counter = document.getElementById('mark-count');
-    counter.innerText = clickCount;
+    counter.innerText = clickCount; 
 }
 
 getAllData('');
@@ -91,8 +91,8 @@ function searchHandle(){
     toggleLoadingSpinner(true);
     const allPost = document.getElementById('all-post');
     allPost.textContent ='';
-    const markRead = document.getElementById('marking-read');
-    markRead.textContent='';
+    // const markRead = document.getElementById('marking-read');
+    // markRead.textContent='';
     const searchField = document.getElementById("search-field");
     const searchText2 = searchField.value;
     setTimeout(() => {

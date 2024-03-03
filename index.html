@@ -46,7 +46,7 @@
 </head>
 <body class="mullish">
   <!-- Header Section Started -->
-    <header class="container mx-auto mt-5">
+    <header class="container mx-auto mt-10">
       <!-- Navbar section Started  -->
       <nav>
         <div class="navbar bg-base-100">
@@ -55,21 +55,21 @@
               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
               </div>
-              <div tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 flex flex-col gap-2  rounded-box ">
-                <h1 class="border border-gray-600 p-2 rounded-3xl" title="Home"><a href="#"><i class="fa-solid fa-house text-slate-500"></i></a></h1>
-                <h1 class="border border-gray-600 p-2 rounded-3xl" title="Home"><a href="#"><i class="fa-solid fa-pen text-slate-500"></i></a></h1>
-                <h1 class="border border-gray-600 p-2 rounded-3xl" title="Home"><a href="#"><i class="fa-solid fa-user-plus text-slate-500"></i></a></h1>
-                <h1 class="border border-gray-600 p-2 rounded-3xl" title="Home"><a href="#"><i class="fa-solid fa-flag text-slate-500"></i></a></h1>
+              <div tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 flex flex-col gap-2  rounded-box bg-white"> 
+                <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Home"><a href="#"><i class="fa-solid fa-house text-slate-500"></i></a></h1>
+                <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Tooltip"><a href="#"><i class="fa-solid fa-pen text-slate-500"></i></a></h1>
+                <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Add User"><a href="#"><i class="fa-solid fa-user-plus text-slate-500"></i></a></h1>
+                <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Flag"><a href="#"><i class="fa-solid fa-flag text-slate-500"></i></a></h1>
               </div>
             </div>
             <a href="#" class="text-4xl font-extrabold"><img src="images/logo.png" alt=""></a>
           </div>
           <div class="navbar-end">
             <div class="navbar-center hidden lg:flex gap-10">
-              <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Home"><a href="#"><i class="fa-solid fa-house text-slate-500"></i></a></h1>
-              <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Tooltip" ><a href="#"><i class="fa-solid fa-pen text-slate-500"></i></a></h1>
-              <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Add User"><a href="#"><i class="fa-solid fa-user-plus text-slate-500"></i></a></h1>
-              <h1 class="border border-gray-600 p-2 rounded-3xl tooltip" data-tip="Flag"><a href="#"><i class="fa-solid fa-flag text-slate-500"></i></a></h1>
+              <h1 class=" tooltip" data-tip="Home"><a href="#">    <img src="images/Frame 2.png" alt=""></a>    </h1>
+              <h1 class=" tooltip" data-tip="Tooltip" ><a href="#"><img src="images/Frame 3.png" alt=""></a>    </h1>
+              <h1 class=" tooltip" data-tip="Add User"><a href="#"><img src="images/Frame 4.png" alt=""></i></a></h1>
+              <h1 class=" tooltip" data-tip="Flag"><a href="#">    <img src="images/Frame 5.png" alt=""></a>    </h1>
             </div>
             <a class="btn rounded-3xl bg-btn-color ml-10 text-white">Sign In</a>
           </div>
@@ -146,7 +146,7 @@
       <!-- Join Forum Banner Section Started-->
       <section class="mt-24 px-4 lg:px-0">
        <div class="flex bg-[#12132D] items-center lg:flex-row flex-col text-white rounded-2xl">
-        <div class="flex-grow-0 flex justify-center items-start gap-5 flex-col p-20">
+        <div class="flex-grow-0 flex justify-center items-center lg:items-start gap-5 flex-col p-20 lg:text-left text-center">
           <h1 class="text-4xl font-bold">Join Our Forum</h1>
           <h1 class="text-xl">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app.</h1>
           <button class="btn bg-btn-color border-none font-bold text-white rounded-3xl" >Registered Now</button>
