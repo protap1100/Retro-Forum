@@ -1,8 +1,9 @@
-const  getAllData = async (searchText) =>{
+const getAllData = async (searchText) => {
     const getData = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const post = await getData.json();
     const allPost = post;
     displayData(allPost);
+    toggleLoadingSpinner(false);
 }
 
 function displayData(allPost){
@@ -46,7 +47,7 @@ function displayData(allPost){
 
         singlePost.appendChild(div);
     });
-
+    toggleLoadingSpinner(false);
 }
 
 let clickCount = 0;
@@ -73,16 +74,29 @@ function markAsRead(title,view_count){
 getAllData('');
 
 
-function searchHandle(isShowAll){
+function searchHandle(){
+    toggleLoadingSpinner(true);
     const allPost = document.getElementById('all-post');
     allPost.textContent ='';
     const searchField = document.getElementById("search-field");
     const searchText2 = searchField.value;
-    getAllData(searchText2, isShowAll);
+    setTimeout(() => {
+        getAllData(searchText2);
+    }, 2000);  
 
 }
 
 
+// Loading spinner 
+const toggleLoadingSpinner = (loading) =>{
+    const loadingSpinner = document.getElementById("loading-spinner");
+    loadingSpinner.classList.remove('hidden');
+    if(loading){
+        loadingSpinner.classList.remove('hidden');
+    }else{
+        loadingSpinner.classList.add('hidden');
+    }
+}
 
 
 
