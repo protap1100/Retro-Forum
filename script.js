@@ -7,7 +7,7 @@ const  getAllData = async () =>{
 
 function displayData(allPost){
     const posts = allPost.posts;
-    
+    // console.log(allPost.posts[3].id)
     // using foreach to run over every element 
     posts.forEach(data => {
         // console.log(data);
@@ -71,3 +71,48 @@ function markAsRead(title,view_count){
 }
 
 getAllData();
+
+
+// Latest Post 
+const latestData = async() =>{
+    const getLatestData = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const latestPost = await getLatestData.json();
+    const allLatestData =latestPost;
+    displayLatestData(allLatestData);
+}
+
+function displayLatestData(allLatestData){
+        console.log(allLatestData);
+
+        allLatestData.forEach(data => {
+           const latestPost = document.getElementById('latest-post');
+           const div = document.createElement('div');
+           div.innerHTML = `
+                        <div class="card  border border-black">
+                        <div class="p-4"><img class="rounded-xl" src="${data.cover_image}" alt="Shoes" /></div>
+                        <div class="p-4 flex flex-col gap-5 ">
+                            <h2 class="#12132D99"><i class="fa-regular fa-calendar fa-fw mr-3"></i>${data.author.posted_date ? data.author.posted_date :'No Date Available' }</h2>
+                            <p class="font-bold">${data.title}</p>
+                            <p class="text-[#12132D99]">${data.description}</p>
+                            <div class="flex gap-5 mt-5">
+                                <div>
+                                    <div class="avatar">
+                                    <div class="w-16 rounded-full">
+                                        <img src="${data.profile_image}" />
+                                    </div>
+                                    </div>
+                                </div>
+                                <div>
+                                <h1 class="font-medium">${data.author.name}</h1>
+                                <h1 class="text-[#12132D99]">${data.author.designation ? data.author.designation : 'No Designation'}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+           `;
+           latestPost.appendChild(div);
+        });
+
+}
+
+latestData();
